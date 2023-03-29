@@ -214,3 +214,54 @@ function get_user($id = NULL){
         }
     }
 }
+
+function user_profile_image_upload()
+{
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $target_dir = "uploads/";
+        $user = get_user();
+        $user_id = $user['id'];
+        $target_file = $target_dir . $user_id . "." .pathinfo(basename($_FILES["profile_image_file"]["name"]), PATHINFO_EXTENSION);;
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $error = "";
+
+        $check = getimagesize($_FILES["profile_image_file"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        } else {
+            $error = "Izabrani fajl nije slika.";
+            $uploadOk = 0;
+        }
+
+        if ($_FILES["profile_image_file"]["size"] > 5000000) {
+            $error = "Slika je prevelika!";
+            $uploadOk = 0;
+        }
+
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+            $error = "Morate iabrati sliku u formatu JPG, JPEG, PNG ili GIF.";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            set_message('Gleska prilikom postavljanja slike'. $error);
+        } else {
+            $sql = "UPDATE users SET profile_image='$target_file' WHERE id=$user_id";
+            confirm(query($sql));
+            set_message('Profila slika uspesno postavljena!');
+
+            if (!move_uploaded_file($_FILES["profile_image_file"]["tmp_name"], $target_file)) {
+                set_message('Greska prilikom postavljanja slike! '. $error);
+            }
+        }
+
+        redirect('profile.php');
+    }
+}
+
+function user_restrictions(){
+    if(!isset($_SESSION['email'])){
+        redirect("login.php");
+    }
+}

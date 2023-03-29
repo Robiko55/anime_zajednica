@@ -1,12 +1,22 @@
 <?php include "inc/header.php";?>
-<h1> Welcome </h1>
+
+
 
 <?php 
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email'])) : ?>
 
-    echo "Vas email je:  ". $_SESSION['email'];
-} else {
-    echo "Molimo vas da se ulogujete!";
-}
+<form method="POST">
+    <h3>Kreiraj novu objavu</h3>
+    <textarea name="post_content" cols="60" rows="10" placeholder ="Vasa objava..."></textarea>
+    <input type="submit" value="Objavi" name="submit">
+</form>
 
- include "inc/footer.php";?>
+    
+<?php else : ?>
+    
+
+
+<?php endif?>
+
+
+ <?php include "inc/footer.php";?>
