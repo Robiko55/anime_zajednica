@@ -306,3 +306,21 @@ function create_post(){
         
     }
 }
+
+
+function fetch_all_posts()
+{
+    $query = "SELECT * FROM posts ORDER BY created_time DESC";
+    $result = query($query);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $user = get_user($row['user_id']);
+
+            echo "<div class='post'><p><img src='" . $user['profile_image'] . "' alt=''><i><b>" . $user['first_name'] . " " . $user['last_name'] . "</b></i></p>
+                    <p>" . $row['content'] . "</p>
+                    <p><i>Date: <b>" . $row['created_time'] . "</b></i></p>
+                    <div class='likes'>Likes: <b id='likes_".$row['id']."'>" . $row['likes'] . "</b><button onclick='like_post(this)' data-post_id='".$row['id']."'>LIKE</button></div></div>";
+        }
+    }
+}

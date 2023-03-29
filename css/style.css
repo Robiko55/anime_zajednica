@@ -80,3 +80,55 @@ form textarea {
     margin-top: 20px;
 }
 
+.posts {
+    margin-top: 50px;
+}
+
+.posts .post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.posts .post img {
+    width: 60px;
+    height: 60px;
+    border-radius: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.posts .post p {
+    margin: 5px 0;
+}
+
+.posts .post p:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.posts .post p:nth-child(2) {
+    font-size: 22px;
+    color: darkslategray;
+}
+
+.posts .post p:nth-child(3) {
+    font-size: 14px;
+}
+
+.posts .post .likes {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.posts .post .likes button {
+    padding: 5px;
+    margin-left: 15px;
+}
+
+.profile-image {
+    max-width: 250px;
+}

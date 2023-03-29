@@ -22,7 +22,7 @@ if(isset($_SESSION['email'])) : ?>
 
 <div class="posts">
 
-
+<?php fetch_all_posts();?>
 
 </div>
 
