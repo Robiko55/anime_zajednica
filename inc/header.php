@@ -24,3 +24,4 @@ include "functions/init.php" // includovacu header na ostalim stranicama, sa nji
         <li><a href="login.php"> Login </a></li>
         <li><a href="register.php"> Register </a></li>
 </ul>
+<hr>

@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', '', 'social_network');
+$con = mysqli_connect('localhost', 'root', '', 'anime_zajednica');
 
 function escape($string){
     global $con;

@@ -18,7 +18,7 @@ body {
 
 .container {
     max-width: 1100px;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     margin: auto;
     padding: 20px;
     box-shadow: 0 0 40px rgba(0,0,0,0.8);
@@ -43,3 +43,39 @@ ul li a{
     text-align: center;
     margin-top: 100px;
 }
+form {
+    margin-top: 15px;
+}
+
+form input {
+    display: block;
+    margin-top: 20px;
+    height: 30px;
+    padding-left: 10px;
+    width: 300px;
+}
+
+form textarea {
+    padding: 10px;
+}
+
+.alert {
+    border: 1px solid red;
+    padding: 15px;
+    max-width: 350px;
+}
+
+.homepage {
+    text-align: center;
+}
+
+.homepage p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.homepage img {
+    width: 100%;
+    margin-top: 20px;
+}
+
