@@ -5,30 +5,40 @@
 }
 
 hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
 }
 
 body {
     background-image: url("img/img.jpg");
     background-size: cover;
     background-position: center;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
     max-width: 1100px;
-    background-color: rgb(255, 255, 255);
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     margin: auto;
     padding: 20px;
     box-shadow: 0 0 40px rgba(0,0,0,0.8);
     min-height: 100vh;
-    opacity: 90%;
+    opacity: 97%;
+    color: white;
+}
+
+ul {
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul li {
     display: inline-block;
     margin-right: 15px;
+    
 }
 
 ul li.welcome-message {
@@ -36,6 +46,7 @@ ul li.welcome-message {
 }
 
 ul li a{
+    
     font-size: 18px;
 }
 
@@ -43,11 +54,16 @@ ul li a{
     text-align: center;
     margin-top: 100px;
 }
+
 form {
     margin-top: 15px;
 }
 
 form input {
+    border-radius: 20px;
+    border-color: #ffffff;
+    color: rgb(0, 0, 0);
+    
     display: block;
     margin-top: 20px;
     height: 30px;
@@ -60,7 +76,6 @@ form textarea {
 }
 
 .alert {
-   
     border: 1px solid red;
     padding: 15px;
     max-width: 350px;
@@ -85,8 +100,9 @@ form textarea {
 }
 
 .posts .post {
-    background-color: white;
-    padding: 15px;
+    background-color: rgb(11, 11, 11);
+    border-radius: 50px;
+    padding: 40px;
     margin-bottom: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     position: relative;
@@ -111,7 +127,7 @@ form textarea {
 
 .posts .post p:nth-child(2) {
     font-size: 22px;
-    color: darkslategray;
+    color: rgb(241, 241, 241);
 }
 
 .posts .post p:nth-child(3) {
@@ -125,10 +141,50 @@ form textarea {
 }
 
 .posts .post .likes button {
-    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.posts .post .likes button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
 }
 
 .profile-image {
     max-width: 250px;
 }
+
+
+
+
+a:link, a:visited {
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transition: 300ms all;
+  }
+ 

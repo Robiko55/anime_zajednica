@@ -31,9 +31,9 @@ if(isset($_SESSION['email'])) : ?>
     
 <div class="homepage">
 
-<h1> Dobrodoli u anime chat room! </h1>
+<h1> Dobrodosli u anime chat room! </h1>
 <p> Drustvena mreza za ljubitelje anime-a, slobodni ste da komentarisete i postavljate postove o vasim omiljenim anime serijalima! </p>
-<h2> Pritisno <a href="login.php">ovde</a> da se ulogujes!</h2>
+<h2> Pritisni <a href="login.php">ovde</a> da se ulogujes!</h2>
 
 <img src="css/img/home.jpg" alt="">
 </dv>
