@@ -3,7 +3,8 @@
 
 <?php 
 
-create_user();
+validate_user_registration();
+display_message();
 
 ?>
 
