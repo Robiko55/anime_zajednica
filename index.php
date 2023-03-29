@@ -4,6 +4,8 @@
 
 <?php 
 if(isset($_SESSION['email'])) : ?>
+<?php create_post(); ?>
+<br>
 
 <form method="POST">
     <h3>Kreiraj novu objavu</h3>
@@ -11,10 +13,30 @@ if(isset($_SESSION['email'])) : ?>
     <input type="submit" value="Objavi" name="submit">
 </form>
 
-    
+
+<div>
+    <?php display_message(); ?>
+</div>
+<hr>
+
+
+<div class="posts">
+
+
+
+</div>
+
+
 <?php else : ?>
     
+<div class="homepage">
 
+<h1> Dobrodoli u anime chat room! </h1>
+<p> Drustvena mreza za ljubitelje anime-a, slobodni ste da komentarisete i postavljate postove o vasim omiljenim anime serijalima! </p>
+<h2> Pritisno <a href="login.php">ovde</a> da se ulogujes!</h2>
+
+<img src="css/img/home.jpg" alt="">
+</dv>
 
 <?php endif?>
 

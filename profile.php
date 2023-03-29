@@ -3,6 +3,7 @@
 user_restrictions();
 ?>
 
+</div> <?php display_message(); ?> </div>
 <?php 
 
 $user = get_user();

@@ -265,3 +265,44 @@ function user_restrictions(){
         redirect("login.php");
     }
 }
+
+function login_check_pages(){
+    if(isset($_SESSION['email']))
+    redirect("index.php");
+}
+
+function create_post(){
+    $errors  = [];
+    if($_SERVER['REQUEST_METHOD']== 'POST'){
+        $post_content = clean($_POST['post_content']);
+
+        if(strlen($post_content)>200){
+
+            $errors[] = "Vasa objava mora imati manje od 200 karaktera!";
+
+        }
+
+        if(!empty($errors)){
+        
+            foreach($errrors as $error){
+                echo '<div> class="alert">'. $error . '</div>';
+            }
+
+        } else {
+            $post_content = filter_var($post_content, FILTER_SANITIZE_STRING);
+            $post_content = escape($post_content);
+
+            $user = get_user();
+            $user_id = $user['id'];
+
+            $sql = "INSERT INTO posts(user_id,content,likes)";
+            $sql .= "VALUES('$user_id','$post_content',0)";
+
+            confirm(query($sql));
+            set_message('Dodali ste objavu!');
+            redirect('index.php');
+        }
+
+        
+    }
+}
