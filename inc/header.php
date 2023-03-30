@@ -28,7 +28,7 @@ include "functions/init.php" // includovacu header na ostalim stranicama, sa nji
         <?php else : ?>
         <li><a href="logout.php"> Izloguj se </a></li>
         <li><a href="profile.php"> Profil </a></li>
-        <li class="welcome-message"><h3><?php $user = get_user(); echo $user['first_name']; ?>, dobrodosli! </h3></li>
+        <li class="welcome-message"><h3><?php $user = get_user(); echo $user['first_name']; ?>, dobrodosao! </h3></li>
         <?php endif; ?>
 </ul>
 <hr>

@@ -92,7 +92,7 @@ function validate_user_registration(){
             $errors[] = "Postoji korisnik sa tim username-om, unestite novi!";
         }
         if(strlen($password)<8){
-            $errors[] = "Password more biti duzi od 8 karktera!";
+            $errors[] = "Password mora biti duzi od 8 karktera!";
 
         }
         if($password != $confirm_password){
@@ -320,7 +320,8 @@ function fetch_all_posts()
             echo "<div class='post'><p><img src='" . $user['profile_image'] . "' alt=''><i><b>" . $user['first_name'] . " " . $user['last_name'] . "</b></i></p>
                     <p>" . $row['content'] . "</p>
                     <p><i>Date: <b>" . $row['created_time'] . "</b></i></p>
-                    <div class='likes'>Likes: <b id='likes_".$row['id']."'>" . $row['likes'] . "</b><button onclick='like_post(this)' data-post_id='".$row['id']."'>LIKE</button></div></div>";
+                    <div class='likes'>Likes: <b id='likes_".$row['id']."'>" . $row['likes'] . "</b><button onclick='like_post(this)'
+                     data-post_id='".$row['id']."'>LIKE</button></div></div>";
         }
     }
 }
